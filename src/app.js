@@ -6,6 +6,9 @@ const forecast = require("./utils/forecast");
 const geocode = require("./utils/geocode");
 
 const app = express();
+
+const port = process.env.PORT || 5000;
+
 //defining paths for express config
 const directory = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -80,6 +83,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(5000, () => {
-  console.log("server is running wild");
+app.listen(port, () => {
+  console.log("server is running wild" + port);
 });
