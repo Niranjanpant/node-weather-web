@@ -13,7 +13,8 @@ const forecast = (lat, lon, callback) => {
       } else if (body.message) {
         callback("unable to find location", undefined);
       } else {
-        callback(undefined, body.current);
+        console.log(body.current)
+        callback(undefined,"The temperature is " +  body.current.temp + "degree" +"The humidity of this place is " + body.current.humidity + "." + "there will be " + body.current.weather[0].description);
       }
     }
   );
