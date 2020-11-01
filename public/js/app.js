@@ -14,7 +14,7 @@ const infoTwo = document.querySelector("#message-2");
     infoOne.textContent = "loading";
 infoTwo.textContent="";
 
-    fetch('http://localhost:5000/weather?address=' + location)
+    fetch('/weather?address=' + location)
     .then((response) => {
      response.json().then((data) => {
        if(data.error) {
